@@ -25,6 +25,11 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                
+                                @if($subscribers->total() == 0)
+                                    <tr><td colspan="8">No results found.</td></tr>
+                                @endif
+                                
                                 @foreach ($subscribers->getCollection() as $subscriber)
                                 <tr>
                                     <td>{!! $subscriber->id !!}</td>
