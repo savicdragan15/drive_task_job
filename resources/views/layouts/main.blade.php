@@ -4,15 +4,34 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
 
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/business-frontpage.css" rel="stylesheet">
+     <link href="/css/app.css" rel="stylesheet">
+    <style>
+    .navbar-toggler {
+        z-index: 1;
+    }
+    
+    @media (max-width: 576px) {
+        nav > .container {
+            width: 100%;
+        }
+    }
+    </style>
+    
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -20,11 +39,14 @@
         ]); ?>
     </script>
 </head>
-<body>
-    
-     @yield('content')
-     
-     
+    <body>
+    @include('layouts.header')
+         <!-- Page Content -->
+         <div class="container">
+            @yield('content')
+         </div>
+         <!-- /.container -->
+    </body>
+    @include('layouts.footer')
  <script src="/js/app.js"></script>
-</body>
 </html>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Subscriber;
 class AdminController extends Controller
 {
      /**
@@ -23,6 +23,20 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $allSubscribers = Subscriber::select('*')->paginate(10);
+        
+        return view('admin.home', ['subscribers' => $allSubscribers]);
+    }
+    
+    public function getSubscriber($id){
+        
+        $subscriber = Subscriber::find($id);
+        
+        if($subscriber == null){
+           echo 'Model not found';          
+           dd();
+        }
+              
+        return view('admin._subscriberDialog', ['subscriber' => $subscriber]);
     }
 }

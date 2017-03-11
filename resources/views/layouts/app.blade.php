@@ -9,11 +9,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="/css/pgwmodal.css" rel="stylesheet">
+    
     <!-- Scripts -->
+    <script src="/js/app.js"></script>
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/pgwmodal.min.js"></script>
+    <!-- Scripts -->
+    
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -81,7 +88,6 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    
 </body>
 </html>

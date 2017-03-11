@@ -18,3 +18,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
 Route::get('/admin', 'AdminController@index');
+
+Route::post('/home', 'HomeController@postIndex');
+
+Route::get('/subscriber/{id}', 'AdminController@getSubscriber');
