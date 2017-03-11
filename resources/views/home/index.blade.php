@@ -119,7 +119,7 @@
             </div>
         </div>
             <div class="">
-                <button type="submit" class="btn btn-success">Link</button>
+                <button type="submit" class="btn btn-success">POŠLJI</button>
             </div>
         </form>
     </div>
