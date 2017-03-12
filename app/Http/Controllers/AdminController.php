@@ -25,7 +25,7 @@ class AdminController extends Controller
     {
         $allSubscribers = Subscriber::select('*')->paginate(env('SUBSCRIBER_PER_PAGE', 10));
         
-        return view('admin.index', ['subscribers' => $allSubscribers]);
+        return $this->loadView('admin.index', ['subscribers' => $allSubscribers]);
     }
     
     public function getSubscriber($id){
@@ -36,7 +36,7 @@ class AdminController extends Controller
            echo 'Model not found';          
            dd();
         }
-              
-        return view('admin._subscriberDialog', ['subscriber' => $subscriber]);
+        
+        return $this->loadView('admin._subscriberDialog', ['subscriber' => $subscriber]);
     }
 }

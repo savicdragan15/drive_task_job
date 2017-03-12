@@ -10,4 +10,17 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    
+    
+    /**
+     * 
+     * @param string $name
+     * @param array $parameters
+     * @return type
+     */
+    protected function loadView($name, $parameters = array())
+    {
+        return view($name, $parameters);
+    }
+    
 }

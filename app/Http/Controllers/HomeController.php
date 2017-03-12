@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        return $this->loadView('home.index');
     }
     
     /**
@@ -56,6 +56,6 @@ class HomeController extends Controller
             \Session::flash('alert-class', 'alert-danger'); 
         }
         
-        return view('home.index');
+       return $this->loadView('home.index');
     }
 }
