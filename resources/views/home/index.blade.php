@@ -14,7 +14,7 @@
             <h2>Vnesite svoje podatke v prazna polja:</h2>
         <div class="col-lg-6 col-md-12">
              <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}" >
-                 <input type="text" name="name" class="form-control" placeholder="Ime" id="name">
+                 <input type="text" name="name" class="form-control" placeholder="Ime" id="name" tabindex="1">
                  @if ($errors->has('name'))
                     <span class="help-block">
                         <strong>{{ $errors->first('name') }}</strong>
@@ -26,8 +26,8 @@
                     <label>Spol:</label>
                 </div>
                 <div class="form-group {{ $errors->has('gender') ? ' has-error' : '' }}">
-                    <label>moški <input type="radio" name="gender" value="male"></label>
-                    <label>ženski <input type="radio" name="gender" value="female" checked=""></label>
+                    <label>moški <input type="radio" name="gender" value="male" tabindex="3"></label>
+                    <label>ženski <input type="radio" name="gender" value="female" checked="" tabindex="4"></label>
                     
                     @if ($errors->has('gender'))
                     <span class="help-block">
@@ -37,7 +37,7 @@
                 </div>
               </div>
             <div class="form-group {{ $errors->has('city') ? ' has-error' : '' }}">
-                 <input type="text" name="city" class="form-control" placeholder="Mesto" id="city">
+                 <input type="text" name="city" class="form-control" placeholder="Mesto" id="city" tabindex="8">
                  @if ($errors->has('city'))
                     <span class="help-block">
                         <strong>{{ $errors->first('city') }}</strong>
@@ -45,7 +45,7 @@
                 @endif
             </div>
              <div class="form-group {{ $errors->has('head') ? ' has-error' : '' }}">
-                 <input type="text" name="head" class="form-control" placeholder="Naslov" id="head">
+                 <input type="text" name="head" class="form-control" placeholder="Naslov" id="head" tabindex="10">
                  @if ($errors->has('head'))
                     <span class="help-block">
                         <strong>{{ $errors->first('head') }}</strong>
@@ -55,7 +55,7 @@
         </div>
         <div class="col-lg-6 col-md-12">
            <div class="form-group {{ $errors->has('surname') ? ' has-error' : '' }}">
-               <input type="text" class="form-control" name="surname" placeholder="Priimek" id="surname">
+               <input type="text" class="form-control" name="surname" placeholder="Priimek" id="surname" tabindex="2">
                @if ($errors->has('surname'))
                     <span class="help-block">
                         <strong>{{ $errors->first('surname') }}</strong>
@@ -67,7 +67,7 @@
                     <label>Datum rojstva:</label>
                 </div>
                 <div class="birthday">
-                    <select name="day" id="day">
+                    <select name="day" id="day" tabindex="5">
                     <option>DD</option>
                       <?php
                         for ($i = 1; $i <= 31; $i++) {
@@ -75,7 +75,7 @@
                         }
                       ?> 
                 </select>
-                    <select name="mounth" id="mounth">
+                    <select name="mounth" id="mounth" tabindex="6">
                     <option>MM</option>
                     <?php
                         for ($i = 1; $i <= 12; $i++) {
@@ -83,7 +83,7 @@
                         }
                       ?> 
                 </select>
-                    <select name="year" id="year">
+                    <select name="year" id="year" tabindex="7">
                     <option>GGGG</option>
                     <?php
                         for ($i = 1900; $i <= 2017; $i++) {
@@ -109,7 +109,7 @@
             </div>
             </div>
             <div class="form-group {{ $errors->has('postalcode') ? ' has-error' : '' }}">
-                 <input type="text" class="form-control" name="postalcode" placeholder="Poštna številka" id="postalcode">
+                 <input type="text" class="form-control" name="postalcode" placeholder="Poštna številka" id="postalcode" tabindex="9">
                  @if ($errors->has('postalcode'))
                     <span class="help-block">
                         <strong>{{ $errors->first('postalcode') }}</strong>
@@ -117,7 +117,7 @@
                 @endif
             </div>
             <div class="form-group {{ $errors->has('issue') ? ' has-error' : '' }}">
-                 <input type="text" class="form-control" name="issue" placeholder="Številka" id="issue">
+                 <input type="text" class="form-control" name="issue" placeholder="Številka" id="issue" tabindex="11">
                  @if ($errors->has('issue'))
                     <span class="help-block">
                         <strong>{{ $errors->first('issue') }}</strong>
@@ -126,7 +126,7 @@
             </div>
         </div>
             <div class="custom-button">
-                <button type="submit" class="btn btn-success"><span id="button-text">POŠLJI</span> 
+                <button type="submit" class="btn btn-success" tabindex="11"><span id="button-text">POŠLJI</span> 
                     <span id="icon-right"><i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></span>
                 </button>
                
