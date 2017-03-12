@@ -25,7 +25,7 @@ class AdminController extends Controller
     {
         $allSubscribers = Subscriber::select('*')->paginate(10);
         
-        return view('admin.home', ['subscribers' => $allSubscribers]);
+        return view('admin.index', ['subscribers' => $allSubscribers]);
     }
     
     public function getSubscriber($id){
