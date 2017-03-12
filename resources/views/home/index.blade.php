@@ -21,8 +21,8 @@
                     <label>Spol:</label>
                 </div>
                 <div class="form-group {{ $errors->has('gender') ? ' has-error' : '' }}">
-                    <label>moški <input type="checkbox" name="gender" value="male"></label>
-                    <label>ženski <input type="checkbox" name="gender" value="female" checked=""></label>
+                    <label>moški <input type="radio" name="gender" value="male"></label>
+                    <label>ženski <input type="radio" name="gender" value="female" checked=""></label>
                     
                     @if ($errors->has('gender'))
                     <span class="help-block">
@@ -61,6 +61,7 @@
                 <div class="form-group ">
                     <label>Datum rojstva:</label>
                 </div>
+                <div class="birthday">
                 <select name="day">
                     <option>DD</option>
                       <?php
@@ -101,6 +102,7 @@
                     </span>
                 @endif
             </div>
+            </div>
             <div class="form-group {{ $errors->has('postalcode') ? ' has-error' : '' }}">
                  <input type="text" class="form-control" name="postalcode" placeholder="Poštna številka" id="surname">
                  @if ($errors->has('postalcode'))
@@ -118,8 +120,8 @@
                 @endif
             </div>
         </div>
-            <div class="">
-                <button type="submit" class="btn btn-success">POŠLJI</button>
+            <div class="custom-button">
+                <button type="submit" class="btn btn-success">POŠLJI <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></button>
             </div>
         </form>
     </div>
