@@ -20,7 +20,7 @@ class CreateSubscribersTable extends Migration
             $table->string('gender')->nullable();
             $table->string('city')->nullable();
             $table->string('head')->nullable();
-            $table->date('birthday')->nullable();
+            $table->date('birthday')->default(date("Y-m-d"));
             $table->string('postalcode', 5)->nullable();
             $table->string('issue')->nullable();
             $table->rememberToken();
