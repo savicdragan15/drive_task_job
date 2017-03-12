@@ -23,7 +23,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $allSubscribers = Subscriber::select('*')->paginate(env('SUBSCRIBER_PER_PAGE'));
+        $allSubscribers = Subscriber::select('*')->paginate(env('SUBSCRIBER_PER_PAGE', 10));
         
         return view('admin.index', ['subscribers' => $allSubscribers]);
     }
