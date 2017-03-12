@@ -9,7 +9,7 @@
         @if(Session::has('message'))
             <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
         @endif
-        <form action="{{ url('/home') }}" method="POST">
+        <form id="regostration-form" action="{{ url('/home') }}" method="POST">
              {{ csrf_field() }}
             <h2>Vnesite svoje podatke v prazna polja:</h2>
         <div class="col-lg-6 col-md-12">
@@ -45,7 +45,7 @@
                 @endif
             </div>
              <div class="form-group {{ $errors->has('head') ? ' has-error' : '' }}">
-                 <input type="text" name="head" class="form-control" placeholder="Naslov" id="city">
+                 <input type="text" name="head" class="form-control" placeholder="Naslov" id="head">
                  @if ($errors->has('head'))
                     <span class="help-block">
                         <strong>{{ $errors->first('head') }}</strong>
@@ -67,7 +67,7 @@
                     <label>Datum rojstva:</label>
                 </div>
                 <div class="birthday">
-                <select name="day">
+                    <select name="day" id="day">
                     <option>DD</option>
                       <?php
                         for ($i = 1; $i <= 31; $i++) {
@@ -75,7 +75,7 @@
                         }
                       ?> 
                 </select>
-                <select name="mounth">
+                    <select name="mounth" id="mounth">
                     <option>MM</option>
                     <?php
                         for ($i = 1; $i <= 12; $i++) {
@@ -83,7 +83,7 @@
                         }
                       ?> 
                 </select>
-                <select name="year">
+                    <select name="year" id="year">
                     <option>GGGG</option>
                     <?php
                         for ($i = 1900; $i <= 2017; $i++) {
@@ -109,7 +109,7 @@
             </div>
             </div>
             <div class="form-group {{ $errors->has('postalcode') ? ' has-error' : '' }}">
-                 <input type="text" class="form-control" name="postalcode" placeholder="Poštna številka" id="surname">
+                 <input type="text" class="form-control" name="postalcode" placeholder="Poštna številka" id="postalcode">
                  @if ($errors->has('postalcode'))
                     <span class="help-block">
                         <strong>{{ $errors->first('postalcode') }}</strong>
@@ -117,7 +117,7 @@
                 @endif
             </div>
             <div class="form-group {{ $errors->has('issue') ? ' has-error' : '' }}">
-                 <input type="text" class="form-control" name="issue" placeholder="Številka" id="surname">
+                 <input type="text" class="form-control" name="issue" placeholder="Številka" id="issue">
                  @if ($errors->has('issue'))
                     <span class="help-block">
                         <strong>{{ $errors->first('issue') }}</strong>
@@ -133,5 +133,56 @@
             </div>
         </form>
     </div>
-    
+
+    <script>
+        jQuery.validator.setDefaults({
+          debug: true,
+          success: "valid"
+        });
+        $( "#regostration-form" ).validate({
+          lang: 'sl',
+          errorClass: 'error-custom',
+          rules: {
+            name: {
+               required: true  
+            },
+            surname: {
+               required: true  
+            },
+            gender: {
+               required: true  
+            },
+            day: {
+              required: true,
+              number: true
+            },
+            mounth: {
+                required: true,
+                number: true
+            },
+            year: {
+              required: true,
+              number: true
+            },
+            city: {
+              required: true
+            },
+            head: {
+              required: true
+            },
+            postalcode: {
+              required: true,
+              number: true,
+              maxlength: 5
+            },
+            issue: {
+              required: true  
+            }
+            
+          },
+          submitHandler: function() {
+              document.getElementById('regostration-form').submit();
+          },
+        });
+    </script>
 @endsection

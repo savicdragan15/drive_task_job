@@ -80,3 +80,7 @@ input{
 #button-text {
     margin-left: 4em;
 }
+
+.error-custom {
+    color: red;
+}
