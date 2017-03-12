@@ -1,4 +1,9 @@
 @extends('layouts.main')
+
+@section('title')
+    Home page
+@stop
+
 @section('content')
     <div class="row col-lg-6 col-md-12 col-sm-12 col-md-push-3 ">
         @if(Session::has('message'))

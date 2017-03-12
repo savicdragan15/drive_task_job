@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+   Admin - Dashboard
+@stop
+
 @section('content')
 <div class="container">
     <div class="row">
