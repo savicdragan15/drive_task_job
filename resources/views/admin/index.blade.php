@@ -39,7 +39,7 @@
                                     <td>{!! $subscriber->gender !!}</td>
                                     <td>{!! $subscriber->city !!}</td>
                                     <td>{!! $subscriber->postalcode !!}</td>
-                                    <td><button class="btn btn-success view-more" data-id='<?= $subscriber->id ?>'><i title="View more" class="fa fa-search" aria-hidden="true"></i></button></td>
+                                    <td><button title="View more" class="btn btn-success view-more" data-id='<?= $subscriber->id ?>'><i title="View more" class="fa fa-search" aria-hidden="true"></i></button></td>
                                 </tr>
                                 @endforeach
                             </tbody>
