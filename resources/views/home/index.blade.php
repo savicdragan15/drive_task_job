@@ -121,7 +121,10 @@
             </div>
         </div>
             <div class="custom-button">
-                <button type="submit" class="btn btn-success">POŠLJI <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></button>
+                <button type="submit" class="btn btn-success"><span id="button-text">POŠLJI</span> 
+                    <span id="icon-right"><i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></span>
+                </button>
+               
             </div>
         </form>
     </div>
