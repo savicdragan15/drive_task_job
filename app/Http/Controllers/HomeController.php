@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use Illuminate\Http\Request;
 use App\Subscriber;
 
@@ -24,9 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return $this->loadView('home.index');
+        $books = Book::select('*')->paginate('');
+
+        return $this->loadView('books.index', ['books' => $books]);
     }
-    
+
     /**
      * Insert new subscriber
      * @param Request $request
@@ -52,7 +55,7 @@ class HomeController extends Controller
             \Session::flash('message', 'Uspešno'); 
             \Session::flash('alert-class', 'alert-success'); 
         }else{
-            \Session::flash('message', 'Došslo je do greške!'); 
+            \Session::flash('message', 'Došlo je do greške!');
             \Session::flash('alert-class', 'alert-danger'); 
         }
         

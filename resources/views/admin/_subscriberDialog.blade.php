@@ -1,7 +1,10 @@
 <?php 
 
-//dd($subscriber);
+dump($subscriber->avatar);
 ?>
+<?php foreach ($subscriber->avatar as $avatar){?>
+    <img src="{!! $avatar->avatar_name !!}" width="80" alt="avatar" />
+<?php } ?>
 <div class="table-responsive">          
     <table class="table">
       <thead>

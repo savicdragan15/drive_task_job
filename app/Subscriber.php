@@ -44,4 +44,17 @@ class Subscriber extends Model
         
         return $this->save();
     }
+    
+     /**
+     * Get the phone record associated with the user.
+     */
+    public function phone()
+    {
+        return $this->hasOne('App\SubscriberPhone');
+    }
+    
+    public function avatar()
+    {
+        return $this->hasMany('App\Avatar');
+    }
 }

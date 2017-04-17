@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Author;
+use App\User;
+use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Subscriber;
+use App\Book;
+use Auth;
 class AdminController extends Controller
 {
      /**
@@ -31,7 +36,11 @@ class AdminController extends Controller
     public function getSubscriber($id){
         
         $subscriber = Subscriber::find($id);
-        
+        $author = Author::find(2);
+        //dd($author->books);
+        $user = User::find(Auth::user()->id);
+
+        dd($user->hasRole('admin'));
         if($subscriber == null){
            echo 'Model not found';          
            dd();
